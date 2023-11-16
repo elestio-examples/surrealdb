@@ -2,16 +2,11 @@ version: "3"
 services:
   surrealdb:
     image: surrealdb/surrealdb:latest
-    container_name: surrealdb
     user: root
     ports:
       - "172.17.0.1:27912:8000"
-    entrypoint:
-      - /surreal
-      - start
-      - --user
-      - ${DB_USER}
-      - --pass
-      - ${DB_PASSWORD}
+    env_file:
+      - ./.env
+    command: start
     volumes:
-      - ./storage/data:/data
+      - ./db:/db
