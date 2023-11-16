@@ -26,7 +26,7 @@ environments:
   - key: "SURREAL_CAPS_ALLOW_ALL"
     value: "true"
   - key: "SURREAL_STRICT"
-    value: "true"
+    value: "false"
 
 config:
   runTime: "dockerCompose"
@@ -46,7 +46,6 @@ lifeCycleConfig:
   postRestoreCommand: "./scripts/postRestore.sh"
   postDeployCommand: "./scripts/postDeploy.sh"
 webUI:
-  - url: "https://[CI_CD_DOMAIN]"
-    label: "SurrealDB"
+  - label: "SurrealDB"
     login: "root"
     password: "[ADMIN_PASSWORD]"
