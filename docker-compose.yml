@@ -1,6 +1,7 @@
 version: "3"
 services:
   surrealdb:
+    restart: always
     image: surrealdb/surrealdb:latest
     user: root
     ports:
